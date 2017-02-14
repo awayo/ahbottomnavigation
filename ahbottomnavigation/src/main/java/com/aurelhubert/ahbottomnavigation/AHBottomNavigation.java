@@ -251,7 +251,7 @@ public class AHBottomNavigation extends FrameLayout {
 		addView(linearLayoutContainer, layoutParams);
 
 		if (titleState != TitleState.ALWAYS_HIDE &&
-				(items.size() == MIN_ITEMS || titleState == TitleState.ALWAYS_SHOW)) {
+				titleState == TitleState.ALWAYS_SHOW) {
 			createClassicItems(linearLayoutContainer);
 		} else {
 			createSmallItems(linearLayoutContainer);
