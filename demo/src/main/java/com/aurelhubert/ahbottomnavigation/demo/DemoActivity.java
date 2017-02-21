@@ -27,7 +27,7 @@ public class DemoActivity extends AppCompatActivity {
 	private DemoViewPagerAdapter adapter;
 	private AHBottomNavigationAdapter navigationAdapter;
 	private ArrayList<AHBottomNavigationItem> bottomNavigationItems = new ArrayList<>();
-	private boolean useMenuResource = true;
+	private boolean useMenuResource = false;
 	private int[] tabColors;
 	private Handler handler = new Handler();
 
@@ -72,14 +72,14 @@ public class DemoActivity extends AppCompatActivity {
 
 			bottomNavigationItems.add(item1);
 			bottomNavigationItems.add(item2);
-			bottomNavigationItems.add(item3);
+			//bottomNavigationItems.add(item3);
 
 			bottomNavigation.addItems(bottomNavigationItems);
 		}
 
 		bottomNavigation.manageFloatingActionButtonBehavior(floatingActionButton);
 		bottomNavigation.setTranslucentNavigationEnabled(true);
-
+		bottomNavigation.setTitleState(AHBottomNavigation.TitleState.ALWAYS_SHOW);
 		bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
 			@Override
 			public boolean onTabSelected(int position, boolean wasSelected) {
