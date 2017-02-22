@@ -39,7 +39,8 @@ public class AHHelper {
 			drawable.invalidateSelf();
 			return drawable;
 		}
-		Drawable wrapDrawable = DrawableCompat.wrap(drawable).mutate();
+		Drawable drwNewCopy = drawable.getConstantState().newDrawable();
+		Drawable wrapDrawable = DrawableCompat.wrap(drwNewCopy).mutate();
 		DrawableCompat.setTint(wrapDrawable, color);
 		return wrapDrawable;
 	}
